@@ -25,6 +25,16 @@ else
                     @Product.GetPriceAsString()&nbsp;(@Product.Qty items in stock)
                 </b>
             </p>
+            <div>
+                <button class="btn btn-success"
+                    @onclick="()=> (AddToCart_Click(new CartItemToAddDto{
+                        CartId=HardCode.CartId,
+                        ProductId=Product.Id,
+                        Qty=1
+
+                    }))"
+                ><b>Add To Cart</b> </button>
+            </div>
         </div>
     </div>
 
