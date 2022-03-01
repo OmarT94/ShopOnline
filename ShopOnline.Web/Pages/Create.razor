@@ -1,0 +1,20 @@
+﻿@page "/product/create"
+@using ShopOnline.Api.Entities
+@inject HttpClient http
+@inject NavigationManager uriHelper
+<h3>Create</h3>
+
+
+<Form ButtonText="Create Products" product="@product"
+                         OnValidSubmit="@CreateProduct" />
+
+@code {
+    ProductToAddDto product = new ProductToAddDto();
+    async Task CreateProduct()
+    {
+        await http.PostAsJsonAsync("api/product", product);
+        uriHelper.NavigateTo("product");
+
+    }
+
+}

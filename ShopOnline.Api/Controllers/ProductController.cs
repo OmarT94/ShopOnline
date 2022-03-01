@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ShopOnline.Api.Data;
+using ShopOnline.Api.Entities;
 using ShopOnline.Api.Extensions;
 using ShopOnline.Api.Repositories.Contracts;
 using ShopOnline.Models.Dtos;
@@ -64,6 +66,31 @@ namespace ShopOnline.Api.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "Error retrieving data from the database");
             }
         }
+        //Create
+        [HttpPost]
+        public async Task<IActionResult> Post(Product product)
+        {
+           return Ok(await productRepository.AddProduct(product));
+        }
+
+        //Update
+        [HttpPut]
+        public async Task<IActionResult> Put(Product product)
+        {
+            return Ok(await productRepository.UpdateProduct(product));
+           
+        }
+
+        //Delete
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            return Ok(productRepository.DeleteProduct(id));
+
+        }
+
+
+
 
     }
 }

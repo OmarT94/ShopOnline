@@ -1,6 +1,6 @@
 ﻿namespace ShopOnline.Api.Entities
 {
-    public class Product
+    public class ProductToAddDto
     {
         public int Id { get; set; }
         public string Name { get; set; }

@@ -1,0 +1,30 @@
+﻿@page "/product/edit/{Id:int}"
+@using ShopOnline.Api.Entities
+<h3>Edit</h3>
+@inject HttpClient http
+@inject IJSRuntime js
+@inject NavigationManager uriHelper
+
+
+
+<Form ButtonText="Update" product="productToAddDto"
+                      OnValidSubmit="@EditProduct"/>
+
+@code {
+    [Parameter]
+    public int Id{ get; set; }
+    ProductToAddDto productToAddDto  = new ProductToAddDto();
+
+    protected async override Task OnParametersSetAsync()
+    {
+        productToAddDto = await http.GetFromJsonAsync<ProductToAddDto>($"api/product/{Id}");
+    }
+
+    async Task EditProduct()
+    {
+        await http.PutAsJsonAsync("api/product", productToAddDto);
+        await js.InvokeVoidAsync("alert", $"Updated Successfully!");
+        uriHelper.NavigateTo("product");
+    }
+
+}

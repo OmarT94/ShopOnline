@@ -4,7 +4,7 @@ using ShopOnline.Web.Services.Contracts;
 
 namespace ShopOnline.Web.Pages
 {
-    public class ProductDetailsBase: ComponentBase
+    public class ProductDetailsBase : ComponentBase
     {
         [Parameter]
         public int Id { get; set; }
@@ -31,7 +31,7 @@ namespace ShopOnline.Web.Pages
             catch (Exception ex)
             {
                 ErrorMessage = ex.Message;
-               
+
             }
         }
         protected async Task AddToCart_Click(CartItemToAddDto cartItemToAddDto)
@@ -45,7 +45,7 @@ namespace ShopOnline.Web.Pages
             catch (Exception)
             {
                 //Log Exception
-                
+
             }
         }
 

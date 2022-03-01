@@ -1,4 +1,4 @@
-﻿using ShopOnline.Api.Entities;
+﻿ using ShopOnline.Api.Entities;
 using ShopOnline.Models.Dtos;
 
 namespace ShopOnline.Api.Extensions
@@ -6,7 +6,7 @@ namespace ShopOnline.Api.Extensions
     public static class DtoConversions
     {
         public static IEnumerable<ProductDto> ConvertToDo(this IEnumerable<Product> products,
-                                                          IEnumerable<ProductCategory> productCategories )
+                                                          IEnumerable<ProductCategory> productCategories)
         {
             return (from product in products
                     join productCategory in productCategories
@@ -66,18 +66,18 @@ namespace ShopOnline.Api.Extensions
                                                             Product product)
         {
             return new CartItemDto
-                    {
-                        Id = cartItem.Id,
-                        ProductId = cartItem.ProductId,
-                        ProductName = product.Name,
-                        ProductDescription = product.Description,
-                        productImageURL = product.ImageURL,
-                        Price = product.Price,
-                        CartId = cartItem.CartId,
-                        Qty = cartItem.Qty,
-                        TotalPrice = product.Price * cartItem.Qty
+            {
+                Id = cartItem.Id,
+                ProductId = cartItem.ProductId,
+                ProductName = product.Name,
+                ProductDescription = product.Description,
+                productImageURL = product.ImageURL,
+                Price = product.Price,
+                CartId = cartItem.CartId,
+                Qty = cartItem.Qty,
+                TotalPrice = product.Price * cartItem.Qty
 
-                    };
+            };
         }
 
     }

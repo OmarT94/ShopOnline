@@ -82,6 +82,10 @@ namespace ShopOnline.Api.Migrations
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
+                    b.Property<string>("CategoryName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -109,6 +113,7 @@ namespace ShopOnline.Api.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
+                            CategoryName = "Beauty",
                             Description = "A kit provided by Glossier, containing skin care, hair care and makeup products",
                             ImageURL = "/Images/Beauty/Beauty1.png",
                             Name = "Glossier - Beauty Kit",
@@ -119,6 +124,7 @@ namespace ShopOnline.Api.Migrations
                         {
                             Id = 2,
                             CategoryId = 1,
+                            CategoryName = "Beauty",
                             Description = "A kit provided by Curology, containing skin care products",
                             ImageURL = "/Images/Beauty/Beauty2.png",
                             Name = "Curology - Skin Care Kit",
@@ -129,6 +135,7 @@ namespace ShopOnline.Api.Migrations
                         {
                             Id = 3,
                             CategoryId = 1,
+                            CategoryName = "Beauty",
                             Description = "A kit provided by Curology, containing skin care products",
                             ImageURL = "/Images/Beauty/Beauty3.png",
                             Name = "Cocooil - Organic Coconut Oil",
@@ -139,6 +146,7 @@ namespace ShopOnline.Api.Migrations
                         {
                             Id = 4,
                             CategoryId = 1,
+                            CategoryName = "Beauty",
                             Description = "A kit provided by Schwarzkopf, containing skin care and hair care products",
                             ImageURL = "/Images/Beauty/Beauty4.png",
                             Name = "Schwarzkopf - Hair Care and Skin Care Kit",
@@ -149,6 +157,7 @@ namespace ShopOnline.Api.Migrations
                         {
                             Id = 5,
                             CategoryId = 1,
+                            CategoryName = "Beauty",
                             Description = "Skin Care Kit, containing skin care and hair care products",
                             ImageURL = "/Images/Beauty/Beauty5.png",
                             Name = "Skin Care Kit",
@@ -159,6 +168,7 @@ namespace ShopOnline.Api.Migrations
                         {
                             Id = 6,
                             CategoryId = 3,
+                            CategoryName = "Electronic",
                             Description = "Air Pods - in-ear wireless headphones",
                             ImageURL = "/Images/Electronic/Electronics1.png",
                             Name = "Air Pods",
@@ -169,6 +179,7 @@ namespace ShopOnline.Api.Migrations
                         {
                             Id = 7,
                             CategoryId = 3,
+                            CategoryName = "Electronic",
                             Description = "On-ear Golden Headphones - these headphones are not wireless",
                             ImageURL = "/Images/Electronic/Electronics2.png",
                             Name = "On-ear Golden Headphones",
@@ -179,6 +190,7 @@ namespace ShopOnline.Api.Migrations
                         {
                             Id = 8,
                             CategoryId = 3,
+                            CategoryName = "Electronic",
                             Description = "On-ear Black Headphones - these headphones are not wireless",
                             ImageURL = "/Images/Electronic/Electronics3.png",
                             Name = "On-ear Black Headphones",
@@ -189,6 +201,7 @@ namespace ShopOnline.Api.Migrations
                         {
                             Id = 9,
                             CategoryId = 3,
+                            CategoryName = "Electronic",
                             Description = "Sennheiser Digital Camera - High quality digital camera provided by Sennheiser - includes tripod",
                             ImageURL = "/Images/Electronic/Electronic4.png",
                             Name = "Sennheiser Digital Camera with Tripod",
@@ -199,6 +212,7 @@ namespace ShopOnline.Api.Migrations
                         {
                             Id = 10,
                             CategoryId = 3,
+                            CategoryName = "Electronic",
                             Description = "Canon Digital Camera - High quality digital camera provided by Canon",
                             ImageURL = "/Images/Electronic/Electronic5.png",
                             Name = "Canon Digital Camera",
@@ -209,6 +223,7 @@ namespace ShopOnline.Api.Migrations
                         {
                             Id = 11,
                             CategoryId = 3,
+                            CategoryName = "Electronic",
                             Description = "Gameboy - Provided by Nintendo",
                             ImageURL = "/Images/Electronic/technology6.png",
                             Name = "Nintendo Gameboy",
@@ -219,6 +234,7 @@ namespace ShopOnline.Api.Migrations
                         {
                             Id = 12,
                             CategoryId = 2,
+                            CategoryName = "Furniture",
                             Description = "Very comfortable black leather office chair",
                             ImageURL = "/Images/Furniture/Furniture1.png",
                             Name = "Black Leather Office Chair",
@@ -229,6 +245,7 @@ namespace ShopOnline.Api.Migrations
                         {
                             Id = 13,
                             CategoryId = 2,
+                            CategoryName = "Furniture",
                             Description = "Very comfortable pink leather office chair",
                             ImageURL = "/Images/Furniture/Furniture2.png",
                             Name = "Pink Leather Office Chair",
@@ -239,6 +256,7 @@ namespace ShopOnline.Api.Migrations
                         {
                             Id = 14,
                             CategoryId = 2,
+                            CategoryName = "Furniture",
                             Description = "Very comfortable lounge chair",
                             ImageURL = "/Images/Furniture/Furniture3.png",
                             Name = "Lounge Chair",
@@ -249,6 +267,7 @@ namespace ShopOnline.Api.Migrations
                         {
                             Id = 15,
                             CategoryId = 2,
+                            CategoryName = "Furniture",
                             Description = "Very comfortable Silver lounge chair",
                             ImageURL = "/Images/Furniture/Furniture4.png",
                             Name = "Silver Lounge Chair",
@@ -259,6 +278,7 @@ namespace ShopOnline.Api.Migrations
                         {
                             Id = 16,
                             CategoryId = 2,
+                            CategoryName = "Furniture",
                             Description = "White and blue Porcelain Table Lamp",
                             ImageURL = "/Images/Furniture/Furniture6.png",
                             Name = "Porcelain Table Lamp",
@@ -269,6 +289,7 @@ namespace ShopOnline.Api.Migrations
                         {
                             Id = 17,
                             CategoryId = 2,
+                            CategoryName = "Furniture",
                             Description = "Office Table Lamp",
                             ImageURL = "/Images/Furniture/Furniture7.png",
                             Name = "Office Table Lamp",
@@ -279,6 +300,7 @@ namespace ShopOnline.Api.Migrations
                         {
                             Id = 18,
                             CategoryId = 4,
+                            CategoryName = "Shoes",
                             Description = "Comfortable Puma Sneakers in most sizes",
                             ImageURL = "/Images/Shoes/Shoes1.png",
                             Name = "Puma Sneakers",
@@ -289,6 +311,7 @@ namespace ShopOnline.Api.Migrations
                         {
                             Id = 19,
                             CategoryId = 4,
+                            CategoryName = "Shoes",
                             Description = "Colorful trainsers - available in most sizes",
                             ImageURL = "/Images/Shoes/Shoes2.png",
                             Name = "Colorful Trainers",
@@ -299,6 +322,7 @@ namespace ShopOnline.Api.Migrations
                         {
                             Id = 20,
                             CategoryId = 4,
+                            CategoryName = "Shoes",
                             Description = "Blue Nike Trainers - available in most sizes",
                             ImageURL = "/Images/Shoes/Shoes3.png",
                             Name = "Blue Nike Trainers",
@@ -309,6 +333,7 @@ namespace ShopOnline.Api.Migrations
                         {
                             Id = 21,
                             CategoryId = 4,
+                            CategoryName = "Shoes",
                             Description = "Colorful Hummel Trainers - available in most sizes",
                             ImageURL = "/Images/Shoes/Shoes4.png",
                             Name = "Colorful Hummel Trainers",
@@ -319,6 +344,7 @@ namespace ShopOnline.Api.Migrations
                         {
                             Id = 22,
                             CategoryId = 4,
+                            CategoryName = "Shoes",
                             Description = "Red Nike Trainers - available in most sizes",
                             ImageURL = "/Images/Shoes/Shoes5.png",
                             Name = "Red Nike Trainers",
@@ -329,6 +355,7 @@ namespace ShopOnline.Api.Migrations
                         {
                             Id = 23,
                             CategoryId = 4,
+                            CategoryName = "Shoes",
                             Description = "Birkenstock Sandles - available in most sizes",
                             ImageURL = "/Images/Shoes/Shoes6.png",
                             Name = "Birkenstock Sandles",
@@ -367,7 +394,7 @@ namespace ShopOnline.Api.Migrations
                         new
                         {
                             Id = 3,
-                            Name = "Electronics"
+                            Name = "Electronic"
                         },
                         new
                         {

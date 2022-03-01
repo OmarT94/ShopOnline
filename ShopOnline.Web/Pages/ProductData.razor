@@ -1,0 +1,85 @@
+﻿@page "/product"
+@using ShopOnline.Api.Entities
+@inject HttpClient client
+@inject IJSRuntime js
+<h3>ProductData</h3>
+
+
+
+<small>Add as many Produkts as you wish.</small>
+<div class="form-group">
+    <a class="btn btn-success" href="product/create"><i class="oi oi-plus"></i> Create New</a>
+</div>
+
+@if (product == null)
+{
+    <text>Loading......</text>
+}
+else if (product.Length == 0)
+{
+    <text>No record</text>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+               <th>Product Id</th>
+                <th>Product Name</th>
+                <th>Category Id </th>
+                <th>Category Name</th>
+                <th>Product Description</th>
+                <th>Product Price</th>
+                <th>Product Img</th>
+                 <th>Product Qto</th>
+                
+            </tr>
+        </thead>
+
+        <tbody>
+        @foreach(ProductToAddDto product1 in product)
+        {
+            <tr>
+             <td>@product1.Id</td>
+            <td>@product1.Name</td>
+            <td>@product1.CategoryId</td>
+            <td>@product1.CategoryName</td>
+            <td>@product1.Description</td>
+            <td>@product1.Price</td>
+            <td>@product1.ImageURL</td>
+            <td>@product1.Qty</td>
+            <td>
+                <a class ="btn btn-success" href="product/edit/@product1.Id">Edit</a>
+                 <div class ="card-footer alert-info text-center">
+                           
+                        </div>
+
+                <button class="btn btn-danger"@onclick="@(() =>Delete(product1.Id))">Delete</button>
+            </td>
+            </tr>
+             
+           }
+        </tbody>
+    </table>
+}
+
+
+
+@code {
+
+    ProductToAddDto [] product { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        product = await client.GetFromJsonAsync<ProductToAddDto[]>("api/product");
+    } 
+
+    async Task Delete(int id)
+    {
+        var prod = product.First(x => x.Id == id);
+        if(await js.InvokeAsync<bool>("confirm",$"Do You Want To Delete {prod.Name} 's ({prod.Id})Record?"))
+        {
+            await client.DeleteAsync($"api/product/{id}");
+            await OnInitializedAsync();
+        }
+    }
+}

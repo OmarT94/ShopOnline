@@ -1,4 +1,5 @@
 ﻿using ShopOnline.Api.Entities;
+using ShopOnline.Models.Dtos;
 
 namespace ShopOnline.Api.Repositories.Contracts
 {
@@ -8,6 +9,8 @@ namespace ShopOnline.Api.Repositories.Contracts
         Task<IEnumerable<ProductCategory>> GetCategories();
         Task<Product> GetItem(int id);
         Task<ProductCategory> GetCategory(int id);
-
+        Task<Product> AddProduct(Product product);
+        Task<Product> UpdateProduct(Product product);
+        Task<Product> DeleteProduct(int id);
     }
 }

@@ -1,0 +1,91 @@
+﻿@using ShopOnline.Api.Entities
+<EditForm Model="@product" OnValidSubmit="@OnValidSubmit">
+    <div class="form-group">
+        <label>Produkt Name :</label>
+        <div>
+            <InputText @bind-Value="@product.Name" />
+            <ValidationMessage For="@(() => product.Name)" />
+
+        </div>
+    </div>
+     &nbsp;
+    <div class="form-group">
+        <label>Product Description:</label>
+        <div>
+            <InputText @bind-Value="@product.Description" />
+            <ValidationMessage For="@(() => product.Description)" />
+
+        </div>
+    </div>
+
+
+    &nbsp;
+    <div class="form-group ">
+        <div>
+            <label>Produkt Preis :</label>
+            <div>
+                <InputNumber @bind-Value="@product.Price" />
+                <ValidationMessage For="@(() => product.Price)" />
+
+            </div>
+        </div>
+    </div>
+    &nbsp;
+    <div class="form-group ">
+        <div>
+            <label>Produkt CategoryId :</label>
+            <div>
+                <InputNumber @bind-Value="@product.CategoryId" />
+                <ValidationMessage For="@(() => product.CategoryId)" />
+            </div>
+        </div>
+    </div>
+    &nbsp;
+    <div class="form-group ">
+        <div>
+            <label>Product Category Name :</label>
+            <div>
+                <InputText @bind-Value="@product.CategoryName" />
+                <ValidationMessage For="@(() => product.CategoryName)" />
+            </div>
+        </div>
+    </div>
+    &nbsp;
+    <div class="form-group ">
+        <div>
+            <label>Produkt ImgPath:</label>
+            <div>
+                <InputText @bind-Value="@product.ImageURL" />
+                <ValidationMessage For="@(() => product.ImageURL)" />
+            </div>
+        </div>
+    </div>
+     &nbsp;
+    <div class="form-group">
+        <label>Product Qty :</label>
+        <div>
+            <InputNumber @bind-Value="@product.Qty" />
+            <ValidationMessage For="@(() => product.Qty)" />
+
+        </div>
+    </div>
+    &nbsp;
+    <div class="form-group ">
+    </div>
+    &nbsp;
+
+    <button type="submit" class="btn btn-success">
+        @ButtonText
+    </button>
+
+
+</EditForm>
+
+
+
+@code {
+    [Parameter] public ProductToAddDto ?product { get; set; }
+    [Parameter] public string ButtonText { get; set; } = "Save";
+    [Parameter] public EventCallback OnValidSubmit { get; set; }
+
+}
