@@ -42,4 +42,4 @@ namespace ShopOnline.Web.Pages
             ShoppingCartItems.Remove(cartItemDto);
         }
     }
-}
+} 

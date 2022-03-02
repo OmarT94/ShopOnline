@@ -30,7 +30,13 @@ namespace ShopOnline.Api.Repositories
                                   {
                                       CartId = cartItemToAddDto.CartId,
                                       ProductId = product.Id,
-                                      Qty = cartItemToAddDto.Qty
+                                      Qty = cartItemToAddDto.Qty,
+                                      ProductName = product.Name,
+                                      ProductDescription = product.Description,
+                                      productImageURL=product.ImageURL,
+                                      Price=product.Price,
+                                      CategoryName=product.CategoryName,
+                                      
                                   }).SingleOrDefaultAsync();
                 if (item != null)
                 {
@@ -66,7 +72,12 @@ namespace ShopOnline.Api.Repositories
                               Id = cartItem.Id,
                               ProductId = cartItem.ProductId,
                               Qty = cartItem.Qty,
-                              CartId = cartItem.CartId
+                              CartId = cartItem.CartId,
+                              ProductName=cartItem.ProductName,
+                              productImageURL=cartItem.productImageURL,
+                              ProductDescription=cartItem.ProductDescription,
+                              Price=cartItem.Price,
+                              CategoryName=cartItem.CategoryName,
                           }).SingleOrDefaultAsync();
         }
 
@@ -82,6 +93,11 @@ namespace ShopOnline.Api.Repositories
                               ProductId = cartItem.ProductId,
                               Qty = cartItem.Qty,
                               CartId = cartItem.CartId,
+                              ProductName=cartItem.ProductName,
+                              productImageURL=cartItem.productImageURL,
+                              ProductDescription=cartItem.ProductDescription,
+                              Price=cartItem.Price,
+                              CategoryName= cartItem.CategoryName,
                           }).ToListAsync();
         }
 

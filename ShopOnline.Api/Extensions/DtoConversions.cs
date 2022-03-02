@@ -52,6 +52,7 @@ namespace ShopOnline.Api.Extensions
                     {
                         Id = cartItem.Id,
                         ProductId = cartItem.ProductId,
+                        CategoryName= product.CategoryName,
                         ProductName = product.Name,
                         ProductDescription = product.Description,
                         productImageURL = product.ImageURL,
@@ -69,6 +70,7 @@ namespace ShopOnline.Api.Extensions
             {
                 Id = cartItem.Id,
                 ProductId = cartItem.ProductId,
+                CategoryName=product.CategoryName,
                 ProductName = product.Name,
                 ProductDescription = product.Description,
                 productImageURL = product.ImageURL,
