@@ -1,17 +1,22 @@
 ﻿<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="">ShopOnline.Web</a>
+        <a class="navbar-brand" href="">ShopOnline</a>
         <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
     </div>
 </div>
 
-<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+@*<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
     <nav class="flex-column">
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
                 <span class="oi oi-home" aria-hidden="true"></span> Home
+            </NavLink>
+        </div>
+         <div class="nav-item px-3">
+            <NavLink class="nav-link" href="shopseite">
+                <span class="oi oi-cart" aria-hidden="true"></span> Shop
             </NavLink>
         </div>
         <div class="nav-item px-3">
@@ -21,11 +26,11 @@
         </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="product">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Products
+                <span class="oi oi-cloud-upload" aria-hidden="true"></span> Creat
             </NavLink>
         </div>
     </nav>
-</div>
+</div>*@
 
 @code {
     private bool collapseNavMenu = true;
